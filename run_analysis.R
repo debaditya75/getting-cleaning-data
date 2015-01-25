@@ -71,4 +71,4 @@ data = rbind(test_data, train_data)
 id_labels   = c("subject", "Activity_ID", "Activity_Label")
 tidy_data   = suppressWarnings(aggregate(data, by=list(Activity_Labels= data$Activity_Label, subjects=data$subject),FUN=mean))
 tidy_data1 <- tidy_data[,!(names(tidy_data) %in% id_labels)]
-write.table(tidy_data1, file = "./tidy_data.txt")
+write.table(tidy_data1, file = "./tidy_data.txt", row.name=FALSE)
